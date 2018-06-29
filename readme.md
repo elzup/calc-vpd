@@ -5,6 +5,12 @@
 
 > VPD (Vapor Pressure Deficit) function
 
+水蒸気圧 = 6.1078＊10 ^ ((7.5 _ 気温 / (気温 + 237.3)))
+飽和水蒸気量 = 217 _ 水蒸気圧 / (気温 + 273.15)
+飽差 = (100 - 相対湿度) \* 飽和水蒸気量 / 100
+
+参考: http://bigbearfarm.blog.fc2.com/blog-entry-306.html
+
 ## Install
 
 ```
@@ -16,28 +22,32 @@ $ npm install calc-vpd
 ```js
 const calcVpd = require('calc-vpd')
 
-calcVpd('unicorns')
-//=> 'unicorns & rainbows'
+calcVpd({ tmp: 29.2, hmd: 76.5 })
+//=> {
+//     "swv": 29.08025234404583,
+//     "vp": 40.518038231438965,
+//     "vpd": 6.83385930085077,
+//   }
 ```
 
 ## API
 
-### `calcVpd(input, [options])`
+### `calcVpd(input)`
 
 #### input
 
-Type: `string`
+Type: `{ tmp: number, hmd: number }`
 
-Lorem ipsum.
+tmp: 気温
+hmd: 湿度
 
-#### options
+#### output
 
-##### foo
+Type: `{ swv: number, vp: number, vpd number }`<br>
 
-Type: `boolean`<br>
-Default: `false`
-
-Lorem ipsum.
+vp: 水蒸気圧,
+swv: 飽和水蒸気量,
+vpd: 飽差
 
 ## License
 
