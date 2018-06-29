@@ -8,5 +8,15 @@
   ],
   "imageSize": 100,
   "commit": true,
-  "contributors": []
+  "contributors": [
+    {
+      "login": "elzup",
+      "name": "elzup",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/2284908?v=4",
+      "profile": "https://elzup.com",
+      "contributions": [
+        "code"
+      ]
+    }
+  ]
 }
