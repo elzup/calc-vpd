@@ -32,13 +32,13 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "all-contributors-cli": "5.2.1",
+    "all-contributors-cli": "5.11.0",
     "eslint": "5.0.1",
     "eslint-config-precure": "2.7.0",
-    "flow-bin": "0.75.0",
+    "flow-bin": "0.108.0",
     "husky": "0.14.3",
-    "jest": "23.2.0",
-    "lint-staged": "7.2.0",
-    "prettier": "1.13.7"
+    "jest": "23.6.0",
+    "lint-staged": "7.3.0",
+    "prettier": "1.18.2"
   }
 }
