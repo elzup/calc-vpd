@@ -1,6 +1,6 @@
 {
   "name": "calc-vpd",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "VPD (Vapor Pressure Deficit) function",
   "license": "MIT",
   "repository": "elzup/calc-vpd",
@@ -27,7 +27,9 @@
     "index.js"
   ],
   "keywords": [
-    "vpd", "IoT", "aguri"
+    "vpd",
+    "IoT",
+    "aguri"
   ],
   "dependencies": {},
   "devDependencies": {
