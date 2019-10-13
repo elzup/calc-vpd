@@ -35,8 +35,8 @@
   "devDependencies": {
     "all-contributors-cli": "6.9.1",
     "eslint": "6.5.1",
-    "eslint-config-nzap": "1.2.3",
-    "husky": "3.0.8",
+    "eslint-config-nzap": "1.2.4",
+    "husky": "3.0.9",
     "jest": "24.9.0",
     "lint-staged": "9.4.2",
     "prettier": "1.18.2"
