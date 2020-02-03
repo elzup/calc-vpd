@@ -1,6 +1,6 @@
 {
   "name": "calc-vpd",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "VPD (Vapor Pressure Deficit) function",
   "license": "MIT",
   "repository": "elzup/calc-vpd",
@@ -36,9 +36,9 @@
     "all-contributors-cli": "6.13.0",
     "eslint": "6.8.0",
     "eslint-config-nzap": "1.4.6",
-    "husky": "3.1.0",
-    "jest": "24.9.0",
-    "lint-staged": "9.5.0",
+    "husky": "4.2.1",
+    "jest": "25.1.0",
+    "lint-staged": "10.0.7",
     "prettier": "1.19.1"
   }
 }
