@@ -1,12 +1,12 @@
 # calc-vpd
 
-[![Build Status](https://travis-ci.org/elzup/calc-vpd.svg?branch=master)](https://travis-ci.org/elzup/calc-vpd)
+![Node.js CI](https://github.com/elzup/calc-vpd/workflows/Node.js%20CI/badge.svg)
 [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
 
 > VPD (Vapor Pressure Deficit) function
 
-- 水蒸気圧 = 6.1078＊10 ^ ((7.5 _ 気温 / (気温 + 237.3)))
-- 飽和水蒸気量 = 217 _ 水蒸気圧 / (気温 + 273.15)
+- 水蒸気圧 = 6.1078 \* 10 ^ ((7.5 - 気温 / (気温 + 237.3)))
+- 飽和水蒸気量 = 217 - 水蒸気圧 / (気温 + 273.15)
 - 飽差 = (100 - 相対湿度) \* 飽和水蒸気量 / 100
 
 参考: http://bigbearfarm.blog.fc2.com/blog-entry-306.html
