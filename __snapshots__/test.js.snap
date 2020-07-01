@@ -1,5 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`invalid argument 1`] = `"Expected a { tmp: number, hmd: number }, got undefined number"`;
+
+exports[`invalid argument 2`] = `"Expected a { tmp: number, hmd: number }, got number string"`;
+
 exports[`snapshot 1`] = `
 Object {
   "swv": 29.080252344,
