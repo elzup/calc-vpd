@@ -15,7 +15,8 @@
     "lint": "eslint --ext .js .",
     "test": "jest",
     "test:cov": "jest --coverage --ci --runInBand",
-    "test:ci": "yarn lint && yarn test:cov"
+    "test:ci": "yarn lint && yarn test:cov",
+    "prepare": "husky install"
   },
   "lint-staged": {
     "*.{js,json,md}": [
@@ -36,7 +37,7 @@
     "all-contributors-cli": "6.20.0",
     "eslint": "7.29.0",
     "eslint-config-nzap": "4.3.1",
-    "husky": "4.3.8",
+    "husky": "^6.0.0",
     "jest": "27.0.6",
     "lint-staged": "11.0.0",
     "prettier": "2.3.2"
