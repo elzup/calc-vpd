@@ -6,7 +6,7 @@
   "repository": "elzup/calc-vpd",
   "author": "elzup",
   "engines": {
-    "node": ">=12"
+    "node": ">=14"
   },
   "scripts": {
     "add-contributor": "all-contributors add",
