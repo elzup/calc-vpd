@@ -1,6 +1,6 @@
 {
   "name": "calc-vpd",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "VPD (Vapor Pressure Deficit) function",
   "license": "MIT",
   "repository": "elzup/calc-vpd",
