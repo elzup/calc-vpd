@@ -9,7 +9,6 @@
     "node": ">=14"
   },
   "scripts": {
-    "add-contributor": "all-contributors add",
     "precommit": "lint-staged",
     "fmt": "prettier --write '**/*.{js,json,md}'",
     "lint": "eslint --ext .js .",
@@ -34,7 +33,6 @@
   ],
   "dependencies": {},
   "devDependencies": {
-    "all-contributors-cli": "6.20.0",
     "eslint": "8.18.0",
     "eslint-config-nzap": "5.3.2",
     "husky": "8.0.1",
