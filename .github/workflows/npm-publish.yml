@@ -1,0 +1,30 @@
+name: Publish
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  id-token: write # OIDC Trusted Publishing
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          registry-url: 'https://registry.npmjs.org'
+          cache: 'pnpm'
+      - run: pnpm install --frozen-lockfile
+      - name: Strip placeholder token so OIDC engages
+        run: |
+          sed -i '/:_authToken=/d; /always-auth/d' "$NPM_CONFIG_USERCONFIG" || true
+      # Publish with the npm CLI (npm >= 11, bundled with Node 24): pnpm's publish
+      # does not reliably engage the OIDC Trusted Publishing handshake.
+      # prepublishOnly (pnpm build && pnpm test) runs as the publish gate.
+      - run: npm publish --access public

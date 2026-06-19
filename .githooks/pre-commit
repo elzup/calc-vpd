@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+# Native git hook (no husky). Enabled via `git config core.hooksPath .githooks`,
+# which the package.json `prepare` script runs on install.
+exec pnpm exec biome check --staged --no-errors-on-unmatched
