@@ -6,6 +6,7 @@
   "repository": "elzup/calc-vpd",
   "author": "elzup",
   "type": "module",
+  "packageManager": "pnpm@10.26.2",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
   "types": "lib/types/index.d.ts",
