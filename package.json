@@ -1,43 +1,53 @@
 {
   "name": "calc-vpd",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "VPD (Vapor Pressure Deficit) function",
   "license": "MIT",
   "repository": "elzup/calc-vpd",
   "author": "elzup",
-  "engines": {
-    "node": ">=14"
+  "type": "module",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "types": "lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "import": "./lib/esm/index.js",
+      "require": "./lib/cjs/index.js"
+    }
   },
-  "scripts": {
-    "precommit": "lint-staged",
-    "fmt": "prettier --write '**/*.{js,json,md}'",
-    "lint": "eslint --ext .js .",
-    "test": "jest",
-    "test:cov": "jest --coverage --ci --runInBand",
-    "test:ci": "yarn lint && yarn test:cov",
-    "prepare": "husky install"
-  },
-  "lint-staged": {
-    "*.{js,json,md}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
+  "sideEffects": false,
   "files": [
-    "index.js"
+    "lib"
   ],
   "keywords": [
     "vpd",
     "IoT",
     "aguri"
   ],
-  "dependencies": {},
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "clean": "rm -rf lib",
+    "build": "pnpm clean && pnpm build:cjs && pnpm build:esm && pnpm build:types",
+    "build:cjs": "tsc --module commonjs --moduleResolution node10 --declaration false --outDir lib/cjs && echo '{\"type\":\"commonjs\"}' > lib/cjs/package.json",
+    "build:esm": "tsc --module esnext --moduleResolution bundler --declaration false --outDir lib/esm",
+    "build:types": "tsc --declaration --emitDeclarationOnly --outDir lib/types",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "fmt": "biome format --write .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:cov": "vitest run --coverage",
+    "prepare": "git config core.hooksPath .githooks || true",
+    "prepublishOnly": "pnpm build && pnpm test"
+  },
   "devDependencies": {
-    "eslint": "8.18.0",
-    "eslint-config-nzap": "5.3.2",
-    "husky": "8.0.1",
-    "jest": "28.1.2",
-    "lint-staged": "13.0.3",
-    "prettier": "2.7.1"
+    "@biomejs/biome": "2.4.10",
+    "@types/node": "22.10.2",
+    "@vitest/coverage-v8": "2.1.8",
+    "typescript": "5.7.2",
+    "vitest": "2.1.8"
   }
 }
