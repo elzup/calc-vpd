@@ -1,3 +1,0 @@
-{
-  "extends": ["nzap", "nzap/jest"]
-}
